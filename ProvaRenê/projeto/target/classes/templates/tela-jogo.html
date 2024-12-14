@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogando</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+<h1 class="text-center">Adivinhe a palavra</h1>
+<h3 class="text-center">Você tem <span th:text="${chances}"></span> chances</h3>
+<p class="text-center">A dica é: <span th:text="${dica}"></span></p>
+<p class="text-center">A palavra tem: <span th:text="${nletras}"></span> letras.</p>
+<h1 class="text-center" th:text="${palavra}"></h1>
+
+<form th:action="@{/chutar}" th:method="post" class="text-center">
+    <div class="form-group">
+        <label for="chute">Digite uma letra:</label>
+        <input type="text" id="chute" name="chute" maxlength="1" required class="form-control w-25 mx-auto" />
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar!</button>
+</form>
+
+<!-- Bootstrap JS and Popper.js (for dropdowns, tooltips, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
